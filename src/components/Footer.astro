@@ -1,0 +1,34 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<div class="bg-white p-4 mb-8 border-2 border-yellow-400 rounded-lg">
+  <p class="text-center text-gray-700">
+    Disclaimer: This is not a real memorial website. 
+  </p>
+  <p class="text-center text-gray-700">
+    This serves as a placeholder static site to demonstrate how easy it is to deploy such a site on AWS using Pulumi.
+  </p>
+</div>
+
+<footer class="bg-gray-900 dark:bg-gray-950 text-white py-8">
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div>
+        <h3 class="text-lg font-semibold mb-4">Visit Us</h3>
+        <p>Victory Memorial Parkway<br>Minneapolis, MN 55412</p>
+      </div>
+      <div>
+        <h3 class="text-lg font-semibold mb-4">Hours</h3>
+        <p>Open daily<br>6:00 AM - 10:00 PM</p>
+      </div>
+      <div>
+        <h3 class="text-lg font-semibold mb-4">Contact</h3>
+        <p>Minneapolis Park and Recreation Board<br>612-230-6400</p>
+      </div>
+    </div>
+    <div class="mt-8 text-center text-gray-400">
+      <p>&copy; {currentYear} Victory Memorial Park. All rights reserved.</p>
+    </div>
+  </div>
+</footer>

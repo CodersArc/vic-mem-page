@@ -1,0 +1,53 @@
+---
+import Modal from './Modal.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  image: ImageMetadata;
+}
+
+const { title, description, image } = Astro.props;
+const modalId = `modal-${title.toLowerCase().replace(/\s+/g, '-')}`;
+---
+
+<div class="group cursor-pointer">
+  <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-transform hover:scale-105" onclick={`document.getElementById('${modalId}').showModal()`}>
+    <img 
+      src={image.src} 
+      alt={title}
+      class="w-full h-48 object-cover"
+      loading="lazy"
+    />
+    <div class="p-6">
+      <h3 class="text-xl font-bold mb-2 dark:text-white">{title}</h3>
+      <p class="text-gray-600 dark:text-gray-300">{description}</p>
+    </div>
+  </div>
+
+  <Modal id={modalId} title={title}>
+    <img 
+      src={image.src} 
+      alt={title}
+      class="w-full max-h-[70vh] object-contain"
+    />
+    <p class="mt-4 text-gray-600 dark:text-gray-300">{description}</p>
+  </Modal>
+</div>
+
+<script>
+  // Add click handlers for closing modals
+  document.querySelectorAll('.close-modal').forEach(button => {
+    button.addEventListener('click', () => {
+      const modal = button.closest('dialog');
+      if (modal) modal.close();
+    });
+  });
+
+  // Close modal when clicking outside
+  document.querySelectorAll('dialog').forEach(dialog => {
+    dialog.addEventListener('click', (e) => {
+      if (e.target === dialog) dialog.close();
+    });
+  });
+</script>

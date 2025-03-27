@@ -1,0 +1,89 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+
+// Import images
+import memorialGrove from '../assets/memorial-grove.jpg';
+import flagpolePlaza from '../assets/flagpole-plaza.jpg';
+import walkingPaths from '../assets/walking-paths.jpg';
+import iceCreamSocial from '../assets/ice-cream-social.jpg';
+import familyPicnics from '../assets/family-picnics.jpg';
+import kidsPlayArea from '../assets/kids-play-area.jpg';
+import communitySports from '../assets/community-sports.jpg';
+import eveningStrolls from '../assets/evening-strolls.jpg';
+import communityEvents from '../assets/community-events.jpg';
+
+const features = [
+  {
+    title: "Memorial Slabs",
+    description: "568 oak trees line the parkway, each commemorating a fallen service member from Hennepin County.",
+    image: memorialGrove
+  },
+  {
+    title: "Flagpole Plaza",
+    description: "A majestic plaza featuring a central flagpole and memorial plaques honoring our veterans.",
+    image: flagpolePlaza
+  },
+  {
+    title: "Walking Paths",
+    description: "Miles of scenic paths perfect for walking, jogging, or peaceful reflection.",
+    image: walkingPaths
+  }
+];
+
+const communityPhotos = [
+  {
+    title: "Summer Ice Cream Social",
+    description: "Join us for our annual ice cream social where families gather for sweet treats and fun.",
+    image: iceCreamSocial
+  },
+  {
+    title: "Family Picnics",
+    description: "Perfect spots for family gatherings and outdoor meals in nature.",
+    image: familyPicnics
+  },
+  {
+    title: "Kids' Play Area",
+    description: "Safe and fun spaces for children to play and make new friends.",
+    image: kidsPlayArea
+  },
+  {
+    title: "Community Sports",
+    description: "Open spaces for baseball, frisbee, and other recreational activities.",
+    image: communitySports
+  },
+  {
+    title: "Evening Strolls",
+    description: "Beautiful sunset walks along our well-maintained paths.",
+    image: eveningStrolls
+  },
+  {
+    title: "Community Events",
+    description: "Regular gatherings that bring our neighborhood together.",
+    image: communityEvents
+  }
+];
+---
+
+<Layout>
+  <div class="container mx-auto px-4 py-8">
+    <h1 class="text-4xl font-bold mb-8 dark:text-white text-center">Welcome to Victory Memorial Park</h1>
+    <p class="text-lg text-gray-700 dark:text-gray-300 text-center max-w-3xl mx-auto mb-12">
+      Discover the historic Victory Memorial Drive, dedicated in 1921 as a tribute to Hennepin County residents 
+      who served in World War I. Experience the memorial parkway featuring the iconic flagpole plaza and 
+      568 oak trees, each commemorating a fallen service member.
+    </p>
+
+    <h2 class="text-3xl font-bold mb-8 dark:text-white text-center">Park Features</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+      {features.map(feature => (
+        <Card {...feature} />
+      ))}
+    </div>
+
+    <h2 class="text-3xl font-bold mb-8 dark:text-white text-center">Community Life</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {communityPhotos.map(photo => (<Card {...photo} />))}
+    </div>
+  </div>
+</Layout>
