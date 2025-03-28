@@ -1,0 +1,5 @@
+config:
+  aws:region: us-west-2
+  deploy-iac:errorDocument: error.html
+  deploy-iac:indexDocument: index.html
+  deploy-iac:path: dist
