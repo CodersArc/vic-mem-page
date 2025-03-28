@@ -52,12 +52,13 @@ Feel free to check [our documentation](https://docs.astro.build) or jump into ou
 ## Saving dev.to blog entry here to also act as README
 
 
+<!--
 ---
 title: Fast Static Website Deployment
 published: false
 tags: devchallenge, pulumichallenge, webdev, cloud
 ---
-
+-->
 *This is a submission for the [Pulumi Deploy and Document Challenge](https://dev.to/challenges/pulumi): Fast Static Website Deployment*
 
 ## What I Built
